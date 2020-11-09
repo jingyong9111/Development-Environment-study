@@ -12,3 +12,9 @@
 import * as math from "./math.js";
 // math객체의 sum 함수만 가져오는 경우
 import { sum } from "./math.js";
+import "./app.css";
+import "./nyancat.jpg";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.innerHTML = `<img src="${nyancat}"/>`;
+});
