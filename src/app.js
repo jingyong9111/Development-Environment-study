@@ -15,6 +15,15 @@ import { sum } from "./math.js";
 import "./app.css";
 import nyancat from "./nyancat.jpg";
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.innerHTML = `<img src=${nyancat}/>`;
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.body.innerHTML = `<img src=${nyancat}/>`;
+// });
+
+// == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
+// == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
+
+const alert = msg => window.alert(msg);
+// == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
+// == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
+
+new Promise();

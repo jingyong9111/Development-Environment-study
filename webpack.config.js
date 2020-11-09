@@ -51,6 +51,11 @@ module.exports = {
           name: "[name].[ext]?[hash]", // 파일명 형식
           limit: 20000 // 20kb 미만 파일만 data url로 처리
         }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/, // node_modules 예외처리
+        loader: "babel-loader" // 바벨 로더를 추가한다
       }
     ]
   },
