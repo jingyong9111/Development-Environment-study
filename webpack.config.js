@@ -36,6 +36,7 @@ module.exports = {
       {
         test: /\.css$/, // .css 확장자로 끝나는 모든 파일
         use: [
+          // eslint-disable-next-line no-undef
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader // 프로덕션 환경
             : "style-loader", // 개발 환경
@@ -59,6 +60,7 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new webpack.BannerPlugin({
       banner: `
@@ -74,9 +76,11 @@ module.exports = {
       template: "./src/index.html", // 템플릿 경로를 지정
       templateParameters: {
         // 템플릿에 주입할 파라매터 변수 지정
+        // eslint-disable-next-line no-undef
         env: process.env.NODE_ENV === "development" ? "(개발용)" : ""
       },
       minify:
+        // eslint-disable-next-line no-undef
         process.env.NODE_ENV === "production"
           ? {
               collapseWhitespace: true, // 빈칸 제거
@@ -85,6 +89,7 @@ module.exports = {
           : false
     }),
     new CleanWebpackPlugin(),
+    // eslint-disable-next-line no-undef
     ...(process.env.NODE_ENV === "production"
       ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
       : [])

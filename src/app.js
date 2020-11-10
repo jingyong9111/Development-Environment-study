@@ -9,11 +9,11 @@
 // ===================================================== //
 
 // 모든 export를 math라는 객체로 가져오는 방법
-import * as math from "./math.js";
+// import * as math from "./math.js";
 // math객체의 sum 함수만 가져오는 경우
-import { sum } from "./math.js";
-import "./app.css";
-import nyancat from "./nyancat.jpg";
+// import { sum } from "./math.js";
+// import "./app.css";
+// import nyancat from "./nyancat.jpg";
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   document.body.innerHTML = `<img src=${nyancat}/>`;
@@ -22,7 +22,7 @@ import nyancat from "./nyancat.jpg";
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 
-const alert = msg => window.alert(msg);
+// const alert = msg => window.alert(msg);
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 
