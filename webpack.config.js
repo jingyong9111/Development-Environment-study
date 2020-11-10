@@ -5,9 +5,14 @@ const childProcess = require("child_process");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const apiMocker = require("connect-api-mocker");
+// eslint-disable-next-line no-undef
+const mode = process.env.NODE_ENV || "development"; // 기본값을 development로 설정
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode,
   // 시작점
   entry: {
     main: "./src/app.js"
@@ -22,7 +27,30 @@ module.exports = {
     // [name]으로 설정한 것은 entry가 여러 개일 경우 동적으로 만들기 위해
     filename: "[name].js"
   },
-
+  devServer: {
+    overlay: true,
+    stats: "errors-only",
+    // eslint-disable-next-line no-unused-vars
+    before: (app, _server) => {
+      app.use(apiMocker("/api", "mocks/api"));
+    },
+    hot: true
+  },
+  optimization: {
+    minimizer:
+      mode === "production"
+        ? [
+            new OptimizeCSSAssetsPlugin(),
+            new TerserPlugin({
+              terserOptions: {
+                compress: {
+                  drop_console: true // 콘솔 로그를 제거한다
+                }
+              }
+            })
+          ]
+        : []
+  },
   // loader는 module 객체의 rules라는 객체에 추가할 수 있다.
   module: {
     rules: [

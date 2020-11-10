@@ -12,11 +12,19 @@
 // import * as math from "./math.js";
 // math객체의 sum 함수만 가져오는 경우
 // import { sum } from "./math.js";
-// import "./app.css";
-// import nyancat from "./nyancat.jpg";
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.body.innerHTML = `<img src=${nyancat}/>`;
+// import axios from "axios";
+// import "./app.css";
+
+// document.addEventListener("DOMContentLoaded", async () => {
+//   const model = {
+//     async get() {
+//       //   const result = await axios.get("/api/keywords");
+//       //   return result.data;
+//     }
+//   };
+//   console.log(model);
+//   document.body.innerHTML = `<div>$<div>`;
 // });
 
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
@@ -26,4 +34,4 @@
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 // == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** == ** ==
 
-new Promise();
+// new Promise();
