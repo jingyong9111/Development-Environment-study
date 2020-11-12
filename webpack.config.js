@@ -119,7 +119,12 @@ module.exports = {
     new CleanWebpackPlugin(),
     // eslint-disable-next-line no-undef
     ...(process.env.NODE_ENV === "production"
-      ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
+      ? [
+          new MiniCssExtractPlugin({
+            filename: `[name].css`,
+            ignoreOrder: true
+          })
+        ]
       : [])
   ]
 };
